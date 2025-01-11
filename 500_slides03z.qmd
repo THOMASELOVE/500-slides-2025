@@ -1,0 +1,172 @@
+---
+title: "500 Class 03 (Zoom)"
+author: "<https://thomaselove.github.io/500-2024/>"
+date: "2024-02-01"
+date-format: iso
+format: 
+  beamer:
+    theme: Madrid
+    colortheme: lily
+    fig-align: center
+---
+
+## Agenda for Zoom Call
+
+Thursday 2025-01-30 from 10 to 11 AM. Zoom details in your email and on [Canvas](https://canvas.case.edu/).
+
+- The SUPPORT / Right Heart Catheterization Study
+- Lab 1 (How did it go?)
+- Rosenbaum, Chapter 4
+- A little bit of OSIA and Proposal Advice
+
+**Class 04**: Nothing but R code
+
+# The SUPPORT study
+
+## Studying Right Heart Catheterization in SUPPORT
+
+SUPPORT: Study to Understand Prognoses and Preferences for Outcomes and Risks of Treatments^[Connors et al. 1996]
+
+- Goal: Examine the association between the use of RHC during the first 24 hours in the ICU and outcomes
+- Outcomes: survival, length of stay, intensity and costs of care
+- Sample: 5,735 critically ill adult ICU patients in nine disease categories
+
+Study was prospective!
+
+---
+
+![](c03/figures/rhc_image.png)
+
+
+## Does the RHC do more harm than good? 
+
+Prior (small) observational studies comparing RHC to non-RHC patients:
+
+- RR of death higher in RHC elderly patients than non-RHC elderly
+- RR of death higher in RHC patients with acute MI than non-RHC patients with MI
+- Patients with higher than expected RHC use had higher mortality
+
+Big Problem: Selection Bias. Physicians (mostly) decide who gets RHC and who doesn't.
+
+Why not a RCT?
+
+- RHC directly measures cardiac function
+- Some MDs believe RHC is necessary to guide therapy for some critically ill patients
+- Procedure is very popular - existing studies haven't created equipoise
+
+## 81 Characteristics used to predict PS(RHC usage)
+
+- Age, Sex, Race
+- Education, Income, Insurance
+- Primary and Secondary Disease category
+- Admission diagnosis category (12 levels)
+- ADL and DASI 2 weeks before admission
+- DNR status on day 1
+- Cancer (none, local, metastasized)
+- 2 month survival model
+- Weight, temperature, BP, heart rate, respiratory rate
+- Comorbid illness (13 categories)
+- Body chemistry (pH, WBC, PaCO_2_, etc.)
+
+Panel (7 specialists in clinical care) specified important variables related to the decision to use or not use a RHC.
+
+## RHC vs. Non-RHC patients
+
+RHC patients were more likely to
+
+- Be male, have private insurance, enter the study with ARF, MOSF or CHF
+
+RHC patients were less likely to
+
+- Be over 80 years old, have cancer, have a DNR order in the first 24 hours of hospitalization
+
+RHC patients had significantly
+
+- Fewer comorbid conditions, 
+- More abnormal results of vital signs, WBC count, albumin, creatinine, etc.
+- Lower model probability of 2-month survival
+
+## How Much Overlap do we see in the RHC data?
+
+```{r, echo = FALSE, fig.align = "center", out.height = '90%'}
+knitr::include_graphics("c03/figures/rhc_overlap.png")
+```
+
+## How Much Overlap do we want?
+
+![](c03/figures/overlap.png)
+
+## Right Heart Catheterization and the Perils of Selective Weighting
+
+- 5,735 hospitalized patients in SUPPORT study
+    - 2,184 treated (RHC) and 3,551 controls (no RHC).
+    
+Reweight each treated patient by 1/PS, and each control patient by 1/(1-PS).
+
+- PS model estimated by Hirano and Imbens^[Hirano and Imbens 2001, Connors 1996, Hirano, Imbens & Ridder 2003] using 57 of 72 available covariates 
+    - Selected only those with |t| > 2.0
+    - Serum potassium, for instance, prior to weighting showed a mean of 4.04 in the RHC group and 4.07 in the "No RHC" group, for a t = -0.99, so it was not included in the propensity model.
+
+Results of this Weighting Approach on the next slide...
+
+---
+
+![](c03/figures/rhc_weights1.png)
+
+## Effectiveness of RHC Propensity Score Weighting
+
+- The weighting is based on a propensity model including 57 of the 72 covariates.
+- Serum potassium not included in this PS.
+- Most means are much closer, although six variables become less balanced (larger absolute t statistic) after weighting.  None of these six were in the 57-variable PS model.
+- Weighting by the propensity score appears to balance control and treatment groups well.
+
+## A "Double Robust" Estimator
+
+1. Fit propensity score model
+2. Weight the individual subjects (ATT, commonly) by the propensity score.
+3. Directly adjust (via regression) for the propensity score in estimating the treatment effect.
+
+- Forces you to think hard about selection.
+- You don't care about parsimony in the PS, so you can maximize predictive value.
+- Can fit a very complex PS model, and a smaller outcome model.
+- Some hope that if PS model or weighting is helpful, the combination will be helpful.
+
+# Discussions
+
+## Labs
+
+- How did Lab 1 go?
+- Lab 1 Sketch should be posted as soon as possible.
+- Lab 2 due 2025-02-20 at 9 AM to Canvas. 
+
+## Progress on Semester Activities
+
+- Building a proposal (first draft due 2-13) for the course project
+- Searching for a suitable OSIA paper, and developing a claim by 2-19.
+
+## Rosenbaum, Chapter 4
+
+Adjustments for Measured Covariates
+
+### For Discussion
+
+- What was the most **important** thing you learned from reading Chapter 4?
+- What was the **muddiest**, least clear thing that arose in your reading?
+- What questions are at the front of your mind now?
+
+# Next Time
+
+## Setting Up Class 04
+
+The lecture will be a walk-through of the `toy` example, which is a simple simulated observational study of a treatment on three outcomes (one quantitative, one binary, and one time-to-event) which we will use to demonstrate the completion of 13 tasks using R, which include:
+
+- Fitting a propensity score model
+- Assessing pre-adjustment balance of covariates
+- Estimating the effects of our treatment on our outcomes ...
+    - Using matching on the propensity score
+    - Using subclassification on the propensity score
+    - Using direct adjustment for the propensity score
+    - Using weighting on the propensity score
+
+Note we have three other (more realistic) examples we'll share in time: `lindner`, `dm2200` and `rhc`.
+

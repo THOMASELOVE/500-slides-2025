@@ -1,6 +1,6 @@
 ---
 title: "500 Class 02 (Recording)"
-author: "<https://thomaselove.github.io/500-2024/>"
+author: "<https://thomaselove.github.io/500-2025/>"
 date: "2025-01-23"
 date-format: iso
 format: 
