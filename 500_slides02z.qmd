@@ -1,0 +1,82 @@
+---
+title: "500 Class 02 (Zoom)"
+author: "<https://thomaselove.github.io/500-2024/>"
+date: "2025-01-23"
+date-format: iso
+format: 
+  beamer:
+    theme: Madrid
+    colortheme: lily
+    fig-align: center
+---
+
+## Agenda for Zoom Call
+
+Thursday 2025-01-23 from 10 to 11 AM. Zoom details in your email and on [Canvas](https://canvas.case.edu/).
+
+- Welcome to 500 Survey
+- Lab 0 and how things are going so far
+- Abramson, Chapter 2
+- Rosenbaum *Causal Inference* Chapters 1-3
+
+## Discussion
+
+- the Welcome to 500 survey
+- Lab 0
+- how things are going so far?
+- questions about the recording?
+
+## Abramson Chapter 2
+
+from *Overdosed America*, Spinning the Evidence: Even the most respected medical journals are not immune...
+
+- The Devil is in the (Statistical) Details
+- Studying the Wrong People
+- Collaboration in the Academy
+- Two Articles on Stroke Reduction
+
+## Rosenbaum, *Causal Inference*
+
+Chapters 1-3
+
+1. The Effects Caused By Treatments
+    - Bleeding George Washington
+2. Randomized Experiments
+    - Treatments for Ebola
+3. Observational Studies: The Problem
+    - Smoking and Periodontal Disease
+    - Smoking and Lung Cancer
+    - Boxplots and the Propensity Score
+
+## For Discussion
+
+- What was the most **important** thing you learned from reading Chapters 1-3?
+- What was the **muddiest**, least clear thing that arose in your reading?
+- What questions are at the front of your mind now?
+
+# Next Time?
+
+## Class 3 Recording: before 10 AM 2025-01-30 
+
+- We'll walk through direct adjustment for the PS and 1:1 matching with the PS. (No R code in slides)
+- Class 4: Essentially nothing but R code.
+- Skim Connors 1996 and Gum 2001 to see how propensity score matching has been done in practice
+
+## Class 3 Zoom at 10 AM 2025-01-30
+
+- Lab 1 due to Canvas by 9 AM 2025-01-30
+    - discussion of Lab 1 sketch during Zoom Session
+    - some comments on the next slide
+- *Causal Inference* read Chapter 4 (Adjustments for Measured Covariates)
+- Look into what you need to do to select an OSIA article (due Tuesday 2025-02-19)
+
+## Lab 1
+
+Use our Lab 1 template, please!
+
+1. Get access to the DIG teaching data from NHLBI
+2. Create a sample according to our specifications
+3. Create a Table 1 comparing MI to no MI (lots of help in template)
+4. Build a logistic regression model comparing MI to no MI (like Task 1 in Lab 0)
+5. Redefine sample and redo 3 and 4
+6. Add fitted probabilities from 5 to your data and plot against observed MI status (like Task 3 in Lab 0)
