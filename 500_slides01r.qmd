@@ -63,7 +63,7 @@ Paul Rosenbaum's 2023 book *Causal Inference*
 
 ## The Web Site
 
-<https://thomaselove.github.io/500-2024> is at the bottom of every slide
+<https://thomaselove.github.io/500-2025> is at the bottom of every slide
 
 - Syllabus
 - Calendar
@@ -132,9 +132,9 @@ We'll spend some time in all five stages.
 
 * Emphasis on the initial examination of data
     + Essential precursor to model-building
-    + Allows us to ``design'' our analyses suitably
-    + Harder than it looks, even after the data are ``clean''
-* Robust near-optimal solutions beat ``optimal'' solutions that rely on dubious assumptions
+    + Allows us to "design" our analyses suitably
+    + Harder than it looks, even after the data are "clean"
+* Robust near-optimal solutions beat "optimal" solutions that rely on dubious assumptions
     + Assumptions are unlikely to be satisfied exactly and may be seriously in error.
     + In observational studies, assumptions are always important. We are looking for safe, practical and reliable approaches.
 
@@ -210,7 +210,7 @@ In an experiment, the assignment of treatments to subjects is controlled by the 
 
 We want to compare groups who looked similar **before** they were exposed to interventions/treatments.
 
-- Randomization tends to produce relatively comparable or ``balanced'' treatment groups in large experiments.
+- Randomization tends to produce relatively comparable or "balanced" treatment groups in large experiments.
     + The covariates are not used in assigning treatments in an experiment.
     + There is no *deliberate* balancing of the covariates: it's just a nice feature of randomization.
 - We have some reason to hope and expect that other (unmeasured) variables will be balanced, as well.
@@ -389,9 +389,9 @@ Bottom Line: MRFIT excluded 96.4\% of potential eligibles.
 
 ## Smith and Pell, BMJ 2003
 
-![smithandpell1.PNG](c01/figures/smithandpell1.PNG)
+![](c01/figures/smithandpell1.PNG)
 
-## Smith and Pell, BMJ 2003
+---
 
 ![smithandpell2.PNG](c01/figures/smithandpell2.PNG)
 
@@ -407,17 +407,17 @@ Observational studies have been tainted by accusations of data dredging, confoun
 Cases such as this one show that medical interventions based solely on observational data should be carefully scrutinised, and the parachute is no exception.
 
 
-## The ``Healthy Cohort'' Effect, from Smith and Pell
+## The "Healthy Cohort" Effect, from Smith and Pell
 
 One of the major weaknesses of observational data is the possibility of bias, including selection bias and reporting bias, which can be obviated largely by using randomised controlled trials. The relevance to parachute use is that individuals jumping from aircraft without the help of a parachute are likely to have a high prevalence of pre-existing psychiatric morbidity.  
 
 Individuals who use parachutes are likely to have less psychiatric morbidity and may also differ in key demographic factors, such as income and cigarette use. 
 
-It follows, therefore, that the apparent protective effect of parachutes may be merely an example of the ``**healthy cohort**'' effect. Observational studies typically use multivariate analytical approaches, using maximum likelihood based modeling methods to try to adjust estimates of relative risk for these biases. 
+It follows, therefore, that the apparent protective effect of parachutes may be merely an example of the "**healthy cohort**" effect. Observational studies typically use multivariate analytical approaches, using maximum likelihood based modeling methods to try to adjust estimates of relative risk for these biases. 
 
 Distasteful as these statistical adjustments are for the cognoscenti of evidence based medicine, no such analyses exist for assessing the presumed effects of the parachute.
 
-## from Smith and Pell
+---
 
 ![smithandpell3.PNG](c01/figures/smithandpell3.PNG) 
 
@@ -512,7 +512,7 @@ We'd like to describe cause-effect relationships from non-experimental data. Thi
     + Exclude unreasonable assignments from the collection.
 3. Define a stochastic mechanism for selecting one assignment from the collection.
     + Complete randomization vs. Blocked randomization
-    + Biased coin / ``balancing'' randomization
+    + Biased coin / "balancing" randomization
 4. Select one assignment from the collection using the mechanism.
 5. Use the stochastic mechanism as the sole basis for inference.
 
@@ -558,7 +558,7 @@ Studies | Anything | **MASSIVE**
 
 ## Why are Experiments *Better* Than Observational Studies?
 
-Scientific questions are not settled on a particular date by a single event.  Rather, we speak of the ``weight of evidence.''
+Scientific questions are not settled on a particular date by a single event.  Rather, we speak of the "weight of evidence."
 
 - Experiments leave fewer grounds for doubt.
 - Experiments often settle questions faster.
@@ -568,8 +568,8 @@ Scientific questions are not settled on a particular date by a single event.  Ra
 ## Advantages of **Smart** Observational Studies
 
 - Address chief criticism of randomized trials: limited generalizability / external validity
-- Enable examination of exposure in ``real life''
-- May enable examination of effect size and ``entrenched practices''
+- Enable examination of exposure in "real life"
+- May enable examination of effect size and "entrenched practices"
 - Broader array of exposures and outcomes can be explored with an observational study than in controlled experiments.
 - Due to frequently large size, can provide information about exposures with small effect sizes (toxicity of treatments)
 - Data are widely (increasingly) available
