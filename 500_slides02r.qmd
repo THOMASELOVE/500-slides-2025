@@ -764,7 +764,7 @@ Thursday 2025-01-23 from 10 to 11 AM. Zoom details in your email and on [Canvas]
 - Abramson Chapter 2
 - Rosenbaum *Causal Inference* Chapters 1-3
 
-## Class 3 Recording 2024-02-01 9 AM to 11 AM
+## Class 3 Recording - watch before 10 AM 2025-01-30 
 
 - We'll walk through direct adjustment for the PS and 1:1 matching with the PS. (No R code in slides)
 - Class 4 Recording: Essentially nothing but R code.

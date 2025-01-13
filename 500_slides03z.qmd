@@ -1,7 +1,7 @@
 ---
 title: "500 Class 03 (Zoom)"
-author: "<https://thomaselove.github.io/500-2024/>"
-date: "2024-02-01"
+author: "<https://thomaselove.github.io/500-2025/>"
+date: "2025-01-30"
 date-format: iso
 format: 
   beamer:

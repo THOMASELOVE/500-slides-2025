@@ -54,7 +54,7 @@ Paul Rosenbaum's 2023 book *Causal Inference*
 
 ## The Web Site
 
-<https://thomaselove.github.io/500-2024> is at the bottom of every slide
+<https://thomaselove.github.io/500-2025> is at the bottom of every slide
 
 - Syllabus
 - Calendar
@@ -332,7 +332,7 @@ More on this study to come.
 
 The slides I use will be posted to the Class 02 README.
 
-## Next Zoom - Thursday 2024-01-25
+## Next Zoom - Thursday 2025-01-23
 
 We'll meet via Zoom from 10 to 11:00 AM. Key things we'll discuss include:
 
