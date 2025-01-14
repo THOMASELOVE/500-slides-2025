@@ -728,25 +728,6 @@ Propensity Scores = Predicted Pr(exposure) for each subject, i.e. the **fitted v
 ![](c02/figures/schematics/Slide42.png)
 
 
-## How Do We Use the Propensity Score?
-
-1. Start with a sample where the exposed subjects don't look very much like the unexposed subjects.
-2. Adjust the sample (in some manner) to make the distributions of exposed and unexposed subjects look more similar prior to exposure.
-3. This will let us attribute the differences we see in outcomes between these adjusted samples more easily to the exposure's causal effect, and not so much to the original differences between the groups.
-
-- To do this, we estimate the propensity score: the probability of receiving the exposure for each subject given their covariate values.
-- Then, we use the propensity score in one of the ways listed on the next slide to fuel our estimates of causal effects.
-
-## Methods for Using Propensity Scores
-
-- Subclassification / Stratification on the Propensity Score
-- Direct (Regression) Adjustment using the Propensity Score
-- Matching using the Propensity Score
-- Weighting using the Propensity Score
-- Combining Approaches for More Robust Estimation
-
-I'll demonstrate R code for all of these ideas soon, but first, we'll discuss them without the hassle of trying to get the machine to run them for us.
-
 ## What Propensity Scores Can and Cannot Do
 
 - If we match exposed subjects to controls with similar propensity scores, we can (sort of) behave as if they had been randomly assigned to exposures.
@@ -766,6 +747,6 @@ Thursday 2025-01-23 from 10 to 11 AM. Zoom details in your email and on [Canvas]
 
 ## Class 3 Recording - watch before 10 AM 2025-01-30 
 
-- We'll walk through direct adjustment for the PS and 1:1 matching with the PS. (No R code in slides)
+- We'll walk through stratification and weighting with the PS. (No R code in slides)
 - Class 4 Recording: Essentially nothing but R code.
 - Skim Connors 1996 and Gum 2001 to see how propensity score matching has been done in practice.
