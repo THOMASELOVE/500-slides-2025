@@ -1,0 +1,185 @@
+---
+title: "500 Class 05 (Zoom)"
+author: "<https://thomaselove.github.io/500-2025/>"
+date: "2025-02-13"
+date-format: iso
+format: 
+  beamer:
+    theme: Madrid
+    colortheme: lily
+    fig-align: center
+---
+
+## Agenda for Zoom Call
+
+Thursday 2025-02-13 from 10 to 11 AM. Zoom details in your email and on [Canvas](https://canvas.case.edu/).
+
+- Feinstein's Model for Research Architecture
+    - 7 Key Aspects for Making Fair Judgments about Causation
+- A Published Example of My Early Propensity Score Work
+    - M.I. Ahmed et al. International Journal of Cardiology 154 (2012) 128–133.
+- Reviewing the Project Proposals
+- Discussing Rosenbaum, Causal Inference, Chapter 6 (Quasi-Experimental Designs)
+
+# Feinstein's Model for Research Architecture (expanded by Neal Dawson)
+
+---
+
+![](c05/figures/dawson_1.png){width=90%}
+
+---
+
+![](c05/figures/dawson_2.png){width=90%}
+
+---
+
+![](c05/figures/dawson_3.png){width=90%}
+
+---
+
+![](c05/figures/dawson_4.png){width=90%}
+
+---
+
+![](c05/figures/dawson_5.png){width=90%}
+
+---
+
+![](c05/figures/dawson_6.png){width=90%}
+
+---
+
+![](c05/figures/dawson_7.png){width=90%}
+
+---
+
+![](c05/figures/dawson_8.png){width=90%}
+
+# A Published Example of My Early Propensity Score Work
+
+## Ahmed et al. 2012
+
+![](c05/figures/ahmed_2012_1.png)
+
+- M.I. Ahmed et al. *International Journal of Cardiology* 154 (2012) 128–133.
+
+## Abstract of Ahmed et al.
+
+![](c05/figures/ahmed_2012_2.png)
+
+## From the Introduction
+
+> The majority of heart failure (HF) patients are ≥65 years, and most
+deaths and HF-related hospitalizations in HF patients occur in this
+patient group. We have previously demonstrated that in a
+propensity-matched cohort of ambulatory patients with mild to
+moderate chronic HF, older age ($\geq 65$ years) was associated with
+increased mortality but not hospitalization.
+
+The objective of the current study was to examine the independent effect of older age on outcomes in chronic advanced systolic HF patients using a propensity-matched design.
+
+## Data Source and Subjects
+
+> This study was conducted using retrospective analysis of public-use copies of the Beta-Blocker Evaluation of Survival Trial (BEST) datasets obtained from the National Heart, Lung, and Blood Institute (NHLBI).
+
+> BEST was a multicenter randomized controlled trial of the beta-blocker bucindolol in chronic systolic HF.
+
+Patients with advanced systolic HF were enrolled from 90 different sites
+across the United States and Canada. All patients had New York Heart Association class III or IV symptoms and a left ventricular ejection fraction below 35%.
+
+## Exposure and Outcomes
+
+Exposure: We categorized (2707) patients into two age groups: younger ($< 65$ years) and older ($\geq 65$ years; n = 1091 or 40%).
+
+Primary outcomes were all-cause mortality and HF hospitalization. Secondary outcomes included cardiovascular mortality, HF mortality and all-cause hospitalization. All outcomes were centrally adjudicated.
+
+## Greedy Matching Approach
+
+> Using a greedy matching protocol described elsewhere in detail, we were able to match 603 of the 1091 older patients with 603 patients $< 65$ years old who had similar propensity scores.
+
+We began by using a non-parsimonious multivariable logistic regression model to estimate propensity score for age $\geq 65$ years for each of the 2707 participants. In the model, an age $\geq 65$ years was used as the dependent variable and all clinically relevant baseline characteristics
+(see Fig. 1, in two slides) were included as covariates.
+
+- The matching process used an SPSS macro published in the second edition of Levesque R, ed. *A Guide for SPSS and SAS Users* 2005. 
+
+## Propensity Matching Results
+
+Before matching, older patients were more likely to have coronary artery disease, atrial fibrillation and chronic kidney disease than younger patients. 
+
+After matching, absolute standardized differences between age groups
+were $< 10$% for all measured covariates (with the exception of white
+blood cell count which was 10.2%) with most values $< 5$% demonstrating
+substantial covariate balance across the groups (Love plot, next slide.)
+
+## Love Plot (Figure 1)
+
+![](c05/figures/ahmed_2012_3.png)
+
+## All-Cause Mortality Effect?
+
+All-cause mortality occurred in 33% (202/603) and 36% (215/603)
+of matched younger and older patients respectively during 4 years of
+follow-up. 
+
+The hazard ratio (HR) for all-cause mortality when older patients are compared to younger patients was HR = 1.05, 95% CI: 0.87 - 1.27.
+
+## Kaplan-Meier Plot for All-Cause Mortality
+
+![](c05/figures/ahmed_2012_4.png)
+
+## Table 2
+
+![](c05/figures/ahmed_2012_5.png)
+
+- Significant association of older age with increased risk of HF mortality.
+
+## Figure 3 (Subgroup Analyses)
+
+![](c05/figures/ahmed_2012_6.png)
+
+## Conclusions
+
+In conclusion, in patients with advanced chronic systolic HF, older
+age is an important marker of increased mortality and hospitalization,
+but has no intrinsic effect on outcome. Therapeutic decisions in older
+adults with advanced HF should not be biased on the basis of age alone.
+
+## Funding and Acknowledgements
+
+Dr. Ahmed is supported by the National Institutes of Health through grants (R01-HL085561 and R01-HL097047) from the National Heart, Lung, and Blood Institute and a generous gift from Ms. Jean B. Morris of Birmingham, Alabama.
+
+"The Beta-Blocker Evaluation of Survival Trial (BEST) study was
+conducted and supported by the NHLBI in collaboration with the
+BEST Investigators. This manuscript was prepared using a limited
+access dataset obtained by the NHLBI and does not necessarily
+reflect the opinions or views of the BEST Study or the NHLBI." The
+authors of this manuscript have certified that they comply with
+the Principles of Ethical Publishing in the *International Journal of
+Cardiology*.
+
+## Discussion of Project Proposals (Draft 1)
+
+To be discussed in class.
+
+## Brief discussion of Rosenbaum Chapter 6
+
+Quasi-Experimental Designs and the use of Two Control Groups
+
+- What was the most **important** thing you learned from reading Chapter 6?
+- What was the **muddiest**, least clear thing that arose in your reading?
+
+## Next Week (Class 6: 2025-02-20)
+
+Recorded Session
+
+- Rubin 2001 discussion (bulk of the recorded materials)
+- Rubin's Rules in Context
+    - toy, lindner and dm2200 examples
+
+Zoom Call and Reminders
+
+- Discussion of Austin and Mamdani case study (2006)
+- Kubo 2020 as an example of OSIA
+- Review of OSIA selections (due Wednesday 2025-02-19 at noon)
+- Lab 2 due to Canvas at 9 AM on Thursday 2025-02-20
+- We'll next discuss Rosenbaum in Class 08.
