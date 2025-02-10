@@ -1,14 +1,13 @@
 ---
 title: "500 Class 05 (Recording)"
-author: "<https://thomaselove.github.io/500-2024/>"
-date: "2024-02-15"
+author: "<https://thomaselove.github.io/500-2025/>"
+date: "2025-02-13"
 date-format: iso
 format: 
   beamer:
     theme: Madrid
     colortheme: lily
     fig-align: center
-    linkcolor: blue
 ---
 
 ## Today's Agenda
