@@ -1,0 +1,70 @@
+---
+title: "500 Class 07 (Zoom)"
+author: "<https://thomaselove.github.io/500-2025/>"
+date: "2025-02-27"
+date-format: iso
+format: 
+  beamer:
+    theme: Madrid
+    colortheme: lily
+    fig-align: center
+---
+
+## Agenda for our Zoom Call
+
+- Presentations (2-3 minutes each) of the Project Proposals (Draft 2)
+    - Each of you will give a 2-3 minute talk (no slides) in which you will briefly describe the title, population, outcome, treatment and covariates included in your second Project Proposal draft. Be prepared to specify where the data come from, and how you sampled it (or plan to sample it), as well as any collaborators you are working with.
+- Settling the OSIA Plans (schedule + who will serve as second reader for each paper)
+- (if time allows) Brief Discussion of D'Agostino Jr (1998)
+
+# Project Proposal Draft 2 Presentations
+
+# Settling the OSIA Plans
+
+# D'Agostino Jr (1998) Tutorial
+
+---
+
+![](c07/figures/dag1.png)
+
+## Summary
+
+> In observational studies, investigators have no control over the treatment assignment. The treated and
+non-treated (that is, control) groups may have large differences on their observed covariates, and these
+differences can lead to biased estimates of treatment effects. Even traditional covariance analysis adjustments may be inadequate to eliminate this bias. 
+
+> The propensity score, defined as the conditional probability of being treated given the covariates, can be used to balance the covariates in the two groups, and therefore reduce this bias. In order to estimate the propensity score, one must model the distribution of the treatment indicator variable given the observed covariates. 
+
+> Once estimated the propensity score can be used to reduce bias through matching, stratification (subclassification), regression adjustment, or some combination of all three. In this tutorial we discuss the uses of propensity score methods for bias reduction, give references to the literature and illustrate the uses through applied examples.
+
+## Matching
+
+Discussion of three main techniques (building on Rosenbaum and Rubin)
+
+- nearest available matching on the estimated propensity score
+- Mahalanobis metric matching including the propensity score
+- nearest available Mahalanobis metric matching within calipers defined by the propensity score, which, essentially, combines the first two methods into one.
+
+## Applied Example: March of Dimes Matching
+
+![](c07/figures/dag2.png)
+
+## After Mahalanobis matching
+
+![](c07/figures/dag3.png)
+
+## Other Methods in D'Agostino Jr (1998)
+
+- Stratification
+    - Example from the Active Management of Labor Trial
+- Regression (Direct) Adjustment
+    - refers to two published studies: Berk and Newton (1985) and to Muller et al. (1986)
+- Additional research work largely focused (in 1998) on missing data
+
+## Class 8 topics
+
+- Instrumental Variables
+- Tanenbaum 2019
+- Elbadawi 2021
+- Discussion of Rosenbaum Chapter 7
+- Lab 3 due to Canvas by 9 AM 2025-03-06.
