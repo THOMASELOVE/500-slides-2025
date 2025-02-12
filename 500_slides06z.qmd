@@ -1,0 +1,282 @@
+---
+title: "500 Class 06 (Zoom)"
+author: "<https://thomaselove.github.io/500-2025/>"
+date: "2025-02-20"
+date-format: iso
+format: 
+  beamer:
+    theme: Madrid
+    colortheme: lily
+    fig-align: center
+    number-sections: false
+---
+
+## What's in these Slides?
+
+- How did Lab 2 go?
+- OSIA Selections
+- Kubo et al. (2020) as an example for OSIA
+- Some Extensions to Propensity Matching and Hansen (2004)
+
+## Getting Started
+
+1. How did Lab 2 go?
+2. OSIA Selections (We'll return to the website for this)
+
+# Kubo et al. (2020) as an example for OSIA
+
+## Kubo et al. (2020) Paper
+
+Effects of preoperative low-intensity training with slow movement on early quadriceps weakness after total knee arthroplasty in patients with knee osteoarthritis: a retrospective propensity score-matched study
+
+- **Population**
+- **Outcome**
+- **Treatment**
+- **Covariates**
+
+## Key Words and Abbreviations
+
+Key Words (from Abstract): Exercise preconditioning, Ischemic preconditioning, Ischemia-reperfusion injury, Knee swelling, Low-intensity training, Prehabilitation, Quadriceps weakness, Slow movement, Thigh swelling, Total knee arthroplasty
+
+Abbreviations
+
+TKA: Total knee arthroplasty; QW: Quadriceps weakness; IR: Ischemiareperfusion;
+IPC: Ischemic preconditioning; EPC: Exercise preconditioning;
+LST: Low-intensity resistance exercise with slow movement and tonic force
+generation; QST: Quadriceps strength test; TUG: Timed up and go test;
+SCT: Stair climb test; JKOM: Japanese Knee Osteoarthritis Measure; VAS: Visual
+analog scale; SMD: Standardized mean difference
+
+## Background
+
+Background: Severe and early quadriceps weakness (QW) after total knee arthroplasty (TKA), which is caused by acute inflammation resulting from surgical trauma and tourniquet-induced ischemia-reperfusion (IR) injury, can be especially problematic. We focused on tourniquet-induced IR injury, because it has been shown to be preventable through ischemic and exercise preconditioning. Low-intensity resistance exercise with slow movement and tonic force generation (LST) share some similarities with ischemic and exercise preconditioning. The present study primarily aimed to clarify the efficacy of preoperative LST program as prehabilitation for early QW among patients with TKA using propensity score matching analysis.
+
+## Methods
+
+Methods: This single-center retrospective observational study used data from patients with knee osteoarthritis (n = 277) who were scheduled to undergo unilateral TKA between August 2015 and January 2017. Those with missing outcome data due to their inability to perform tests were excluded. The LST group included participants who performed LST and aerobic exercise (LST session) more than seven times for three months prior to surgery. The control group included participants who performed less than eight LST sessions, a general and light exercise or had
+no exercise for three months prior to surgery. Knee circumference, thigh volume, knee pain during quadriceps strength test (QST) and timed up and go test (TUG), quadriceps strength, and TUG were measured before and 4 days after surgery. Knee swelling, thigh swelling, $\Delta$knee pain, QW, and $\Delta$TUG were determined by comparing pre- and postoperative measurements.
+
+## Check 1
+
+Can we describe the ...
+
+- Population
+- Outcome
+- Treatment
+- Covariates
+
+## Statistical Analysis Section (Start)
+
+Statistical analysis was conducted using the IBM SPSS version 26 statistical software package (IBM Corp., Armonk, N.Y., USA). Participants were divided into the LST group and control group. The LST group included participants who performed category 1 sessions (LST and aerobic exercise) more than seven times for three months prior to surgery. The control group included participants who performed less than eight category 1 sessions, category 2 sessions (a general and light exercise) or had no prehabilitation (no exercise) for three months prior to surgery. Propensity score matching was used to balance group characteristics that could affect the LST program's instructions and formulae. Propensity scores were estimated using a logistic regression model where treatment status was regressed on age, gender, body mass index, and preoperative measurements, including quadriceps strength of the affected leg, knee pain during the QST and TUG, the TUG, the SCT, and JKOM scores. Propensity scores were subsequently used to match participants on a one-to-one basis using the nearest-neighbor method without replacement and a caliper width of 0.2 standard deviations of the logit of the propensity score. ...
+
+## Figure 1 from Kubo et al. (2020)
+
+![](c06/figures/kubo2.png){width=85%}
+
+## Table 1 from Kubo et al. (2020)
+
+![](c06/figures/kubo3.png)
+
+
+## Study Limitations
+
+There are several limitations that need to be considered. First, the study included a small number of each group participants. Second, this was a single-center retrospective study; accounting for all unmeasured or unknown confounders affecting the outcomes was impossible, even after propensity score matching. Third, some variables remained imbalanced after propensity score
+matching. However, it is important to note that most imbalanced variables were worse in the LST group than that in the control group, suggesting that preoperative LST program may have improved early QW even in cases with relatively low physical function. Finally, given that QW was assessed only on postoperative day 4, it remains uncertain whether early QW suppression can optimize long-term postoperative recovery. In future, a large-scale multicenter randomized controlled trial with long-term follow up is needed to address these limitations. 
+
+## Results and Conclusions
+
+Results: Propensity score matching generated 41 matched pairs who had nearly balanced characteristics. The LST group had a significantly lower knee and thigh swelling, QW, and $\Delta$TUG compared to the control group (all, p < 0.05). No significant differences in $\Delta$knee pain during the QST and TUG were observed between both groups (both, p > 0.05).
+
+Abstract Conclusions: The present study demonstrated the beneficial effects of preoperative LST program on knee swelling, thigh swelling, QW, and walking disability immediately after TKA.
+
+### Conclusions Section (in the body of the paper)
+
+The present study showed that preoperative LST program exerted beneficial effects on knee and thigh swelling, QW, and walking disability immediately after TKA. Future research addressing the limitations of this study is nonetheless needed to confirm the validity of our findings.
+
+
+# Some Extensions to Propensity Matching
+
+## Is Regression Adjustment Unnecessary?
+
+- Matching and stratification are old and trusted methods of adjustment for observational studies, but the difficulty of implementing them led earlier practitioners to prefer regression.
+- Modern extensions to matching methods let us perform optimal matches, full matches and optimal full matches, and to control imbalance (or at least reduce bias reduction) in ways that have become attainable only in recent years.
+
+Good references include Rosenbaum (2010) and Hansen (2004) for example.
+
+## General Approaches to Optimal or Near-Optimal Constrained Matching
+
+1. Calculate propensity scores
+2. Establish a **distance matrix**
+
+This is just a table with one row for each treated subject and one column for each potential control.
+
+- The "distances" can be squared differences in propensity scores between the subjects, Mahalanobis distances, or something else.
+- To use calipers, we set to $\infty$ all cells in the table corresponding to a propensity difference which exceeds the caliper.
+
+## A Small Distance Matrix
+
+Consider four treated subjects (T1, T2, T3 and T4) and six control subjects (C1, C2, C3, C4, C5 and C6.) 
+
+- We have a difference score (perhaps the absolute difference in propensity for treatment) for each comparison. Some of these are infinite.
+- We also have each subject categorized as (Y)oung or (O)ld, and we haven't decided yet how important this is for our matching.
+
+Subject | C1 (Y) | C2 (O) | C3 (O) | C4 (Y) | C5 (O) | C6 (O)
+:-----: | -----: | -----: | -----: | -----: | -----: | -----: 
+T1 (Y)  | .23 | .47 | .39 | $\infty$ | .51 | .35
+T2 (O)  | .45 | $\infty$ | .28 | .31 | .42 | $\infty$
+T3 (O)  | $\infty$ | .35 | $\infty$ | .27 | .44 | .28
+T4 (O)  | .31 | .26 | .51 | .29 | $\infty$ | .24
+
+## OK, so Who Gets Matched?
+
+Subject | C1 (Y) | C2 (O) | C3 (O) | C4 (Y) | C5 (O) | C6 (O)
+:-----: | -----: | -----: | -----: | -----: | -----: | -----: 
+T1 (Y)  | .23 | .47 | .39 | $\infty$ | .51 | .35
+T2 (O)  | .45 | $\infty$ | .28 | .31 | .42 | $\infty$
+T3 (O)  | $\infty$ | .35 | $\infty$ | .27 | .44 | .28
+T4 (O)  | .31 | .26 | .51 | .29 | $\infty$ | .24
+
+>- Now, who gets matched?
+>- Treated subject T1 matches to C1
+>- T2 matches to C3
+>- T3 matches to C4 (or maybe C6 - is age important?)
+>- T4 matches to C6 (or C2, or C4, hmmm....)
+
+## Almost Exact Matching
+
+- Suppose a few of the covariates are of enormous importance - want to match exactly on them wherever possible.
+
+We could add a penalty (but perhaps not an infinite penalty) to the distance matrix when the specified covariates fail to match, and that is the main approach that we use.
+
+- Adding 2 to the Mahalanobis distance for mismatches roughly doubles the importance of that covariate as compared to the others, for example.
+
+There's a lot of active work in this area developing various algorithms that permit finer control.
+
+## "Fine Balance" in Matching
+
+- Constrain optimal matching that forces a nominal variable to be balanced, without restricting who is matched to whom.
+
+This is especially useful if...
+
+- you have a nominal variable with many levels
+- you have a rare binary variable that is difficult to control using a distance
+- you are focused on the interaction of several nominal variables
+
+It is also possible to get specific imbalance patterns.
+
+## Fine Balance: Initial Distance Matrix
+
+Subject | C1 (Y) | C2 (O) | C3 (O) | C4 (Y) | C5 (O) | C6 (O)
+:-----: | -----: | -----: | -----: | -----: | -----: | -----: 
+T1 (Y)  | .23 | .47 | .39 | $\infty$ | .51 | .35
+T2 (O)  | .45 | $\infty$ | .28 | .31 | .42 | $\infty$
+T3 (O)  | $\infty$ | .35 | $\infty$ | .27 | .44 | .28
+T4 (O)  | .31 | .26 | .51 | .29 | $\infty$ | .24
+
+Suppose we want to get optimal balance on the propensity score while matching perfectly on the age category (Y/O).
+
+- We have 4 treated subjects (1 young, 3 old)
+- We have 6 potential controls (2 young, 4 old)
+- So we need to remove 1 young and 1 old in matching
+
+## Fine Balance: Augmented Distance Matrix
+
+Subject | C1 (Y) | C2 (O) | C3 (O) | C4 (Y) | C5 (O) | C6 (O)
+:-----: | -----: | -----: | -----: | -----: | -----: | -----: 
+T1 (Y)  | .23 | .47 | .39 | $\infty$ | .51 | .35
+T2 (O)  | .45 | $\infty$ | .28 | .31 | .42 | $\infty$
+T3 (O)  | $\infty$ | .35 | $\infty$ | .27 | .44 | .28
+T4 (O)  | .31 | .26 | .51 | .29 | $\infty$ | .24
+*Extra 1* | 0 | $\infty$ | $\infty$ | 0 | $\infty$ | $\infty$ 
+*Extra 2* | $\infty$ | 0 | 0 | $\infty$ | 0 | 0
+
+Add 2 rows to the matrix, then run the match
+
+- *Extra 1* pulls away one young control
+- *Extra 2* pulls away one old control
+
+The binary age category will be perfectly balanced across the matched sample, but the partners within each individual pair are not required to be in the same age category.
+
+## Fine Balance General Procedure
+
+To get the minimum distance match with fine balance (on a nominal covariate, say GROUP)...
+
+1. Cross tabulate GROUP with treatment indicator
+2. Determine # of controls to remove from each category of GROUP to achieve perfect balance
+3. Add one row for each control that must be removed, with 0 distance to its own category and infinite distance to all others
+4. Find an optimal match for this square matrix
+5. Discard extra rows and their matched controls
+
+# Full Matching
+
+## Full Matching in Observational Studies
+
+- In the past, it has been tough to implement full matching in observational studies, even though it is appealing in principle.
+- Alignment of comparable treated and control subjects is as good as any alternate method, and potentially much better.
+- Hansen (2004) modifies full matching with modifications to minimize variance as well as bias
+
+In this example,
+
+- Optimal full matching removes as much as 99% of the bias along a PS on which treated and control means are separated by 1.1 SD's. 
+- Reduces to insignificance biases along 27 covariates, while making use of more, not less, of the data than regression based analyses.
+
+## Hansen (2004) SAT Coaching Study
+
+- Survey of a random sample of 1995-1996 SAT test takers about their preparation
+- 12% of respondents had completed extracurricular test preparation courses
+- Matching looked unattractive to the original researchers due to significant reduction in sample size, but they only considered 1:1 matching.
+- Do 1:k matching options look better?
+
+---
+
+![](c06/figures/hansen_1.png){width=90%}
+
+---
+
+![](c06/figures/hansen_2.png){width=90%}
+
+---
+
+![](c06/figures/hansen_3.png){width=90%}
+
+---
+
+![](c06/figures/hansen_4.png){width=90%}
+
+---
+
+![](c06/figures/hansen_5.png){width=90%}
+
+---
+
+![](c06/figures/hansen_6.png){width=90%}
+
+---
+
+![](c06/figures/hansen_7.png){width=90%}
+
+---
+
+![](c06/figures/hansen_8.png){width=90%}
+
+## SAT Coaching Study Results
+
+- Raw differences of treated and control group means were 41 points on Math and 9 on Verbal
+- Full matching leads to aggregate contrasts of 26 points on Math and 1 point on the verbal.
+    - Standard errors for these estimates are around 5 points.
+- Surprised that Verbal effect is so small?
+    - Control is not "no prep at all"
+    - Estimated effect of treatment on the controls is 3 for Math and -8 on Verbal.
+- Method doesn't require homogeneity of coaching effects.
+- Whether and to what degree coaching is beneficial appears to vary greatly across students.
+
+## Next Class (2025-02-27)
+
+1. Analyses of the SUPPORT / Right Heart Catheterization Study
+2. Propensity Scores and Sensitivity Analysis
+3. Read Connors (1996) and D'Agostino Jr (1998)
+
+Project Proposal draft 2 due 9 AM Thursday 2025-02-27.
+
+- **Warning**: Be prepared. In the Zoom meeting on 2025-02-27, each of you will give a 2-3 minute talk (no slides) in which you will *briefly* describe the title, population, outcome, treatment and covariates included in your second Project Proposal draft. Be prepared to specify where the data come from, and how you sampled it (or plan to sample it), as well as any collaborators you are working with.
+
