@@ -1,0 +1,219 @@
+---
+title: "500 Class 09"
+author: "<https://thomaselove.github.io/500-2025/>"
+date: "2025-03-20"
+date-format: iso
+format: 
+  beamer:
+    theme: Madrid
+    colortheme: lily
+    fig-align: center
+---
+
+## Agenda for the Slides
+
+- Discussion of Lab 4
+- Some key takeaways from Elbadawi 2021
+- Discussion of Rosenbaum **Causal Inference** Chapter 8
+
+# Discussion of Lab 4
+
+## Lab 4 sketch will be posted by class time
+
+My choices: deliberately (nearly) guaranteed not to be yours...
+
+- I studied the subpopulation of patients who have no prior MI (`PREVMI` == 0).
+- The exposure of interest to me was NYHA Functional Class (`FUNCTCLS`) of III or IV, as compared to I or II.
+- The outcome I studied was all-cause hospitalization (`HOSP`).
+
+I am anticipating that among the patients without a prior myocardial infarction, those with baseline NYHA Class III or IV will be hospitalized more frequently than those with NYHA Class I or II.
+
+I chose 15 covariates (listed in the Lab 4 sketch) including quantities, binary and multi-categorical covariates.
+
+## My Lab 4 Results (see Sketch for Details)
+
+1. Build an appropriate Table 1.
+    - Several covariates are unbalanced by exposure.
+    - Rubin's Rules are not quite where we want them.
+2. Unadjusted estimate of treatment effect on outcome.
+    - Indicates a fairly substantial effect.
+3. 1:1 matching with sensitivity or stability analysis.
+    - Love plots look much improved after greedy matching.
+    - 760 matched pairs, much better Rubin's Rule 1.
+    - Discussed both sensitivity *and* stability analyses in sketch.
+4. Weighted (with regression adjustment if you like).
+    - Excellent Love plot, Rubin's Rules after ATT weighting
+    - Effective Sample Sizes: 760 treated, 1206 control.
+5. Compare your results, and describe any concerns.
+    - Matched, weighted, unadjusted estimates pretty similar.
+
+This is, of course, the set of analyses for your Project.
+
+# Some key takeaways from Elbadawi 2021
+
+---
+
+![](c09/figures/el_1.png)
+
+## The Clinical Issue
+
+Critical limb ischemia (CLI) is a severe form of peripheral artery disease (PAD) where blood flow to the lower extremities is severely compromised, leading to tissue damage and potential loss of limb. 
+
+CLI is primarily caused by atherosclerosis, the buildup of plaque in the arteries, which narrows them and restricts blood flow. Other risk factors include diabetes, smoking, high blood pressure and high cholesterol.
+
+## Revascularization
+
+"Acute limb ischemia revascularization" refers to the medical procedure of restoring blood flow to a limb that is experiencing a sudden, severe decrease in blood supply, known as acute limb ischemia (ALI).
+
+This is usually achieved through either open surgical or endovascular techniques to unblock the affected artery and save the limb from potential amputation; this is considered a time-sensitive emergency procedure due to the potential for tissue damage and loss of limb function if not addressed quickly.
+
+## from the Abstract 
+
+**OBJECTIVES** The purpose of this study was to evaluate temporal trends in the frequency of revascularization and
+associated outcomes in patients with diabetes mellitus and critical limb ischemia (CLI).
+
+**BACKGROUND** Little is known about outcomes following revascularization for CLI in patients with diabetes mellitus.
+
+**METHODS** Temporal trends in hospitalization for CLI among patients with diabetes were determined using the 2002–
+2015 National Inpatient Sample database. Propensity score matching was used to compare patients who underwent
+revascularization with those who did not and, separately, to compare those who underwent endovascular versus surgical
+revascularization. The main study outcome was in-hospital mortality.
+
+## Data Source
+
+The National Inpatient Sample (NIS) database is the largest inpatient database in the United States, part of the Healthcare Cost and Utilization Project (HCUP), sponsored by the Agency for
+Healthcare Research and Quality. The NIS is derived from billing data submitted by hospitals to statewide data organizations.
+
+The NIS contains information on demographic and clinical characteristics as well as resource use obtained from discharge abstracts.
+
+
+## Population
+
+Unweighted data from the NIS contain an approximate 20% sample of annual U.S. hospital discharges. Using validated sample weights, weighted data from the NIS represent a national estimate of total annual U.S. hospital discharges.
+
+The NIS database for 2002 to 2015 was queried to identify hospitalizations with primary ICD-9 diagnostic codes for Critical Limb Ischemia (CLI). Only ICD-9 codes were used, and data beyond September 2015 were not included.
+
+More than 1.2 million relevant hospitalizations (unweighted.)
+
+---
+
+![](c09/figures/el_2.png)
+## Outcomes
+
+In-hospital outcomes were evaluated for patients who underwent revascularization versus those who did not and, in a secondary analysis, for those who underwent endovascular versus surgical
+revascularization. 
+
+The primary outcome of interest was in-hospital mortality. 
+
+Secondary outcomes included major amputation, minor amputation, postoperative infection, major bleeding, respiratory complications, acute stroke, acute kidney injury, length of hospital stay, and total hospital costs.
+
+## Statistical Analysis section (excerpts)
+
+Categorical variables are expressed as frequencies and percentages and were compared using the chi-square test. Continuous variables are expressed as mean $\pm$ SD or median (interquartile range [IQR]) depending on their distribution and were compared using Student’s t-test or the Mann-Whitney U test as appropriate.
+
+Linear regression analysis was used to evaluate temporal trends in hospitalizations for CLI and DM.
+
+All analyses were conducted using the complex sample feature of SPSS and appropriate weighting samples to account for hospital clustering, weights, and stratification in accordance with HCUP regulations. SPSS version 24.0 and R version 3.3.1 were used for all statistical analyses. 
+
+*Associations were considered significant if the p value was $\leq$ 0.05.*
+
+## Propensity Score Methodology
+
+Propensity score methodology was used to match hospitalizations 1:1 for patients who underwent revascularization versus those who did not, as well as to match endovascular versus surgical revascularization. Nearest neighbor matching was used, using a caliper width of 0.2 (MatchIt R package).
+
+Matched for two exposure choices: 
+
+- Revascularization (400K) vs Medical Therapy (800K)
+- Revascularization: Surgical (140K) vs Endovascular (200K)
+
+The propensity score was calculated from 26 patient- and hospital-related variables (listed on my next slide.)
+
+## 26 Variables used in the Propensity Score
+
+- age $\geq$ 75, sex, race
+- hospital bed-size, hospital region and hospital teaching status  
+- hypertension, obesity, history of smoking
+- history of heart failure, chronic lung disease, pulmonary circulation disorders, chronic liver disease, chronic kidney disease, coagulopathy, hypothyroidism
+- prior myocardial infarct, prior stroke, prior percutaneous coronary intervention, prior coronary artery bypass grafting
+- history of implantable cardiac defibrillator, history of cardiac pacemaker
+- chronic anemia, coronary artery disease, end-stage renal disease on hemodialysis, and tissue loss
+
+---
+
+![](c09/figures/el_3.png)
+
+---
+
+![](c09/figures/el_4.png)
+
+---
+
+![](c09/figures/el_5.png)
+
+---
+
+![](c09/figures/el_6.png)
+
+## Summary of Findings
+
+- Revascularization (compared to medical therapy) was associated with lower mortality and amputation rate.
+- Surgical revascularization (compared to endovascular) was associated with higher mortality but lower amputation rate.
+
+and, details not shown here...
+
+- Endovascular revascularization is trending up in usage. Surgical revascularization and medical therapy are trending down.
+- Mortality from CLI is decreasing over time, no matter which treatment modality is used.
+
+## Some Conclusions from Past Students
+
+- Longer follow-up for limb salvage and mortality outcomes needed
+- No information about medications, labs, vascular anatomy
+- Did not have cause of CLI and acute vs. Chronic
+
+- Matching seemed adequate based on standardized differences. Many variables used to calculate PS. Very few “treated” subjects lost in matching process
+- Would have liked to see a plot of variance ratios
+- No sensitivity analysis performed
+
+# Discussion of Rosenbaum **Causal Inference** Chapter 8
+
+## Rosenbaum Chapter 8
+
+Replication, Resolution and Evidence Factors
+
+- Replication is Not Repetition
+- Repetition without Resolution
+- Varied Views of a Single Object
+- Evidence Factors
+
+The lead in the blood of children example is discussed in several of Paul's books, including Rosenbaum 2010 (see our Sources page.)
+
+- What was the most important thing?
+- What was the muddiest, most confusing thing?
+
+## Replication and Replication Projects: Some Guidance
+
+- [Replication and Replicability in Science](https://www.ncbi.nlm.nih.gov/books/NBK547524/) from the National Academies of Sciences, Engineering, and Medicine.
+- Nosek B and Errington TM [What is replication?](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100931/)
+- Moreau D and Wiebels K [Ten simple rules for designing and conducting undergraduate replication projects](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10019630/)
+- Royal Society Open Science [Replication Studies: Guidance for Authors and for Referees and Reviewers](https://royalsocietypublishing.org/rsos/replication-studies)
+- Wikipedia on the [Replication Crisis](https://en.wikipedia.org/wiki/Replication_crisis)
+- Ioannidis JPA 2005 [Why Most Published Research Findings are False](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1182327/)
+- Peng RD and Hicks SC 2021 [Reproducible Research: A Retrospective](https://www.annualreviews.org/doi/abs/10.1146/annurev-publhealth-012420-105110) *Annual Review of Public Health*
+
+## Bayes Factors as a measure of strength of evidence
+
+The Bayes factor is a ratio of two competing statistical models represented by their evidence, and is used to quantify the support for one model over the other.
+
+See, for instance, 
+
+- Wikipedia on [Bayes factor](https://en.wikipedia.org/wiki/Bayes_factor)
+- The [BayesFactor package](https://cran.r-project.org/web/packages/BayesFactor/vignettes/manual.html) in R
+- Stefan et al. 2019  [A tutorial on Bayes Factor Design Analysis using an informed prior](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6538819), doi: 10.3758/s13428-018-01189-8
+
+## Reminders for Next Week
+
+1. Project Update due to Canvas at 9 AM on Wednesday 2025-03-26.
+2. OSIA presentations, group 2
+3. Complete Rosenbaum **Causal Inference** through Chapter 9.
+4. Skim Posner et al. 2001
+
