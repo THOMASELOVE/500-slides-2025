@@ -174,7 +174,9 @@ and, details not shown here...
 - Would have liked to see a plot of variance ratios
 - No sensitivity analysis performed
 
-# Discussion of Rosenbaum **Causal Inference** Chapter 8
+---
+
+![](c09/figures/prr.png)
 
 ## Rosenbaum Chapter 8
 

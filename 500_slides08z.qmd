@@ -104,7 +104,9 @@ We also performed a sensitivity analysis by first increasing and then decreasing
 
 CONCLUSIONS: In treating CSM, ACF led to lower hospital charges, shorter hospital stays, and an increased likelihood of being discharged to home relative to PCF.
 
-# Discussion of Rosenbaum, Chapter 7
+---
+
+![](c08/figures/prr.png)
 
 ## Some Rosenbaum Chapter 7 highlights
 
